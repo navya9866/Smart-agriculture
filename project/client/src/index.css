@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-sans: 'DM Sans', sans-serif;
+    --font-display: 'Outfit', sans-serif;
+
+    /* Agricultural Green & Earthy Minimal Theme */
+    --background: 140 20% 98%;
+    --foreground: 160 40% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 160 40% 10%;
+    --card-border: 140 20% 90%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 160 40% 10%;
+    --popover-border: 140 20% 90%;
+
+    /* Rich Agricultural Green */
+    --primary: 142 60% 35%;
+    --primary-foreground: 0 0% 100%;
+    --primary-border: 142 60% 25%;
+
+    --secondary: 40 40% 92%;
+    --secondary-foreground: 160 40% 15%;
+    --secondary-border: 40 40% 82%;
+
+    --muted: 140 20% 94%;
+    --muted-foreground: 160 15% 40%;
+    --muted-border: 140 20% 88%;
+
+    --accent: 45 90% 50%;
+    --accent-foreground: 45 90% 15%;
+    --accent-border: 45 90% 40%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --destructive-border: 0 84% 50%;
+
+    --border: 140 20% 88%;
+    --input: 140 20% 88%;
+    --ring: 142 60% 35%;
+
+    /* Chart Colors */
+    --chart-1: 142 60% 35%; /* Primary green */
+    --chart-2: 45 90% 50%;  /* Earthy yellow/gold */
+    --chart-3: 190 80% 40%; /* Water blue */
+    --chart-4: 25 80% 50%;  /* Soil orange/brown */
+    --chart-5: 280 60% 60%; /* Purple/pesticide */
+
+    --radius: 0.75rem;
+
+    /* Elevation Variables */
+    --elevate-1: rgba(0, 0, 0, 0.03);
+    --elevate-2: rgba(0, 0, 0, 0.06);
+
+    /* Sidebar Variables */
+    --sidebar: 140 20% 98%;
+    --sidebar-foreground: 160 40% 15%;
+    --sidebar-primary: 142 60% 35%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 140 20% 92%;
+    --sidebar-accent-foreground: 160 40% 10%;
+    --sidebar-border: 140 20% 90%;
+    --sidebar-ring: 142 60% 35%;
+  }
+
+  .dark {
+    --background: 160 30% 6%;
+    --foreground: 140 20% 96%;
+
+    --card: 160 30% 8%;
+    --card-foreground: 140 20% 96%;
+    --card-border: 160 30% 14%;
+
+    --popover: 160 30% 8%;
+    --popover-foreground: 140 20% 96%;
+    --popover-border: 160 30% 14%;
+
+    --primary: 142 50% 45%;
+    --primary-foreground: 160 40% 10%;
+    --primary-border: 142 50% 35%;
+
+    --secondary: 40 20% 16%;
+    --secondary-foreground: 40 20% 96%;
+    --secondary-border: 40 20% 24%;
+
+    --muted: 160 20% 14%;
+    --muted-foreground: 140 10% 65%;
+    --muted-border: 160 20% 20%;
+
+    --accent: 45 80% 55%;
+    --accent-foreground: 160 40% 10%;
+    --accent-border: 45 80% 45%;
+
+    --border: 160 30% 16%;
+    --input: 160 30% 18%;
+    --ring: 142 50% 45%;
+
+    --chart-1: 142 50% 45%;
+    --chart-2: 45 80% 55%;
+    --chart-3: 190 70% 50%;
+    --chart-4: 25 70% 55%;
+    --chart-5: 280 50% 65%;
+
+    --sidebar: 160 30% 6%;
+    --sidebar-foreground: 140 20% 96%;
+    --sidebar-primary: 142 50% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 160 20% 12%;
+    --sidebar-accent-foreground: 140 20% 96%;
+    --sidebar-border: 160 30% 14%;
+    --sidebar-ring: 142 50% 45%;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply font-bold tracking-tight text-foreground;
+  }
+}
+
+@layer utilities {
+  .hover-elevate {
+    @apply transition-transform duration-300 ease-out hover:-translate-y-0.5;
+  }
+
+  .glass-panel {
+    @apply bg-white/60 dark:bg-black/40 backdrop-blur-md border border-white/20 dark:border-white/10;
+  }
+}
